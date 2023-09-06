@@ -1,9 +1,7 @@
 import os
 from flask import Flask, jsonify, render_template
 
-
 os.chdir(os.path.dirname(__file__))
-
 
 app = Flask(__name__)
 
