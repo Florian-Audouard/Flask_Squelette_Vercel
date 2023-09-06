@@ -3,6 +3,7 @@ from flask import Flask, jsonify, render_template
 
 
 os.chdir(os.path.dirname(__file__))
+from database.database import get_data
 
 
 app = Flask(__name__)
@@ -11,9 +12,6 @@ app = Flask(__name__)
 @app.route("/")
 def index():  # pylint: disable=missing-function-docstring
     return render_template("index.html")
-
-
-from database.database import get_data
 
 
 @app.route("/getDatabase", methods=["GET"])
