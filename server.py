@@ -3,10 +3,12 @@ from flask import Flask, jsonify, render_template
 
 
 os.chdir(os.path.dirname(__file__))
-from database.database import get_data
 
 
 app = Flask(__name__)
+
+# Si il est mis plus haut la page crash
+from database.database import get_data
 
 
 @app.route("/")
