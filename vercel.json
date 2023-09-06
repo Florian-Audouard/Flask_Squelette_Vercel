@@ -8,10 +8,6 @@
         {
             "src": "/static/**",
             "use": "@vercel/static"
-        },
-        {
-            "src": "/database/database.py",
-            "use": "@vercel/static"
         }
     ],
     "routes": [
