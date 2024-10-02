@@ -5,7 +5,7 @@ Returns:
 """
 import os
 import urllib.parse
-import psycopg
+import psycopg2
 from dotenv import dotenv_values
 
 os.chdir(os.path.dirname(__file__))
@@ -35,21 +35,21 @@ CONN_PARAMS = f"postgresql://{config['USER']}:{config['PASSWORD']}@{config['HOST
 
 
 def reset_table():  # pylint: disable=missing-function-docstring
-    with psycopg.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
+    with psycopg2.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
         with conn.cursor() as cur:
             with open(FILENAME_DB_SHEMA, "r", encoding="utf-8") as file:
                 cur.execute(file.read())
 
 
 def get_data():  # pylint: disable=missing-function-docstring
-    with psycopg.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
+    with psycopg2.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
         with conn.cursor() as cur:
             cur.execute("select text from data;")
             return cur.fetchall()
 
 
 def init_data():
-    with psycopg.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
+    with psycopg2.connect(CONN_PARAMS) as conn:  # pylint: disable=not-context-manager
         with conn.cursor() as cur:
             cur.execute(
                 "INSERT INTO data (text) VALUES (%(msg)s);",
