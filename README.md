@@ -16,11 +16,11 @@
   - *`create database flaskapp with owner flaskapp;`*
   - *Créer un fichier ```.env``` dans le dossier database qui contient : *
     ```ini
-    HOST=localhost
-    PORT=5432
-    DATABASE=flaskapp
-    USER=flaskapp
-    PASSWORD=flaskapp
+    HOST_DB=localhost
+    PORT_DB=5432
+    DATABASE_DB=flaskapp
+    USER_DB=flaskapp
+    PASSWORD_DB=flaskapp
     ```
   - *double clicker sur database.py*
 - **Lancer le serveur :**
@@ -32,11 +32,11 @@
   - **Initialisé la base de données en ligne :**
     - *Créer un fichier ```site.env``` dans le dossier database qui contient les identifiants de la base de données en ligne exemple :*
     ```ini
-    HOST=lucky.db.elephantsql.com
-    PORT=5432
-    DATABASE=ryyfkeal
-    USER=ryyfkeal
-    PASSWORD=YsAWEdcwhEVANbrqmmhSvbEwmbo_PNz7
+    HOST_DB=lucky.db.elephantsql.com
+    PORT_DB=5432
+    DATABASE_DB=ryyfkeal
+    USER_DB=ryyfkeal
+    PASSWORD_DB=YsAWEdcwhEVANbrqmmhSvbEwmbo_PNz7
     ```
     - *lancé le fichier database.py avec l'argument ```--site```*
   - **Mettre le site en ligne**
