@@ -12,16 +12,16 @@ from time import sleep
 
 os.chdir(os.path.dirname(__file__))
 
-default_look_filename = ".env"
+ENV_FILENAME = ".env"
 
 if __name__ == "__main__":
     import sys
 
     if len(sys.argv) > 1 and (sys.argv[0] == "--site" or sys.argv[1] == "--site"):
-        default_look_filename = "site.env"
+        ENV_FILENAME = "site.env"
 
-if os.path.exists(default_look_filename):
-    config = dotenv_values(default_look_filename)
+if os.path.exists(ENV_FILENAME):
+    config = dotenv_values(ENV_FILENAME)
 else:
     config = {
         "USER_DB": os.environ.get("USER_DB"),
